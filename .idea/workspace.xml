@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b396ac3f-cda4-46b9-8a2c-36a63969fb75" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/register/migrations/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapps2026/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/webapps2026/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,9 +17,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="3BJFO6wF6c2jLoEL443CMHtQhaP" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -34,6 +36,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "ai.playground.ignore.import.keys.banner.in.settings": "true",
     "git-widget-placeholder": "master",
+    "last_opened_file_path": "E:/webapps2026",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -82,6 +85,8 @@
       <option name="presentableId" value="Default" />
       <updated>1774199230878</updated>
       <workItem from="1774199231908" duration="1139000" />
+      <workItem from="1774440254798" duration="70000" />
+      <workItem from="1774693401155" duration="703000" />
     </task>
     <servers />
   </component>
