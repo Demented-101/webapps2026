@@ -23,4 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", payapp_views.home, name="home"),
     path("home/", payapp_views.home, name="home"),
+    path("login/", reg_views.login_user, name="login"),
+    path("register/", reg_views.register_user, name="register"),
+    path("logout/", reg_views.logout_user, name="logout"),
+    path("transaction/", include("payapp.urls")),
 ]

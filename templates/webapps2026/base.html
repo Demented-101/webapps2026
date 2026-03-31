@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <!--Navbar-->
+    <!-- Dynamic navbar that will show sites accessible to the user-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Payment Application</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="False" aria-label="Toggle navigation">
@@ -27,7 +27,7 @@
                         <a class="nav-link" href="/home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/payment">Make Payment</a>
+                        <a class="nav-link" href="/transaction">Make Payment</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/logout">Logout</a>
@@ -41,6 +41,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/login">Login</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register">Register</a>
+                    </li>
 
                 {% endif %}
             </ul>
@@ -51,6 +54,27 @@
 	{% block content %}
 	{% endblock %}
     </div>
+
+    {% if messages %} <!-- show django messages at the end of forms -->
+
+        <div class="container">
+            <div class="row">
+            <div class="col-md-8 offset-md-2">
+                {% for message in messages %}
+                {% if message.tags == 'error' %}
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {% else %}
+                    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                {% endif %}
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            </div>
+            </div>
+        </div>
+
+    {% endif %}
 </body>
 </html>
 
