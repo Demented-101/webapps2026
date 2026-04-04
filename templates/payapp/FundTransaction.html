@@ -7,10 +7,15 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-    <h4>Transfer Funds</h4>
-    <form method="post" class="form-group">
-        {% csrf_token %}
-        {{ form|crispy }}
-        <button type="submit" class="btn btn-success">Transfer</button>
-    </form>
+    {% if user.is_authenticated %}
+        <h4>Transfer Funds</h4>
+        <form method="post" class="form-group">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-success">Transfer</button>
+        </form>
+    {% else %}
+        <h1>You are not logged in!</h1>
+        <p>To make transactions, <a href="/templates/register/login.html">Login here</a></p>
+    {% endif %}
 {% endblock %}

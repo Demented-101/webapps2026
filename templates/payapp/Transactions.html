@@ -1,0 +1,31 @@
+{% extends 'webapps2026/base.html' %}
+
+{% block title %}
+    My Transactions
+{% endblock %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <h1>My Transactions: </h1>
+        <br>
+        <table style="border-spacing: 100px">
+            <tr>
+                <th style="padding-right: 20px">To</th>
+                <th style="padding-right: 20px">From</th>
+                <th style="padding-right: 20px">Amount sent</th>
+                <th style="padding-right: 20px">Date</th>
+            </tr>
+            {% for trans in transactions %}
+                <tr>
+                    <td>{{ trans.recipient_username }}</td>
+                    <td>{{ trans.payee_username }}</td>
+                    <td>{{ trans.amount }}</td>
+                    <td>{{ trans.created_at }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <h1>You are not logged in!</h1>
+        <p>To view your transactions, <a href="/templates/register/login.html">Login here</a></p>
+    {% endif %}
+{% endblock %}

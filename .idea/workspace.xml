@@ -2,20 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b396ac3f-cda4-46b9-8a2c-36a63969fb75" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/payapp/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payapp/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/register/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/payapp/FundTransaction.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/register/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/register/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payapp/migrations/0002_rename_from_username_balancetransactions_payee_username_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payapp/migrations/0003_balancetransactions_transacted.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payapp/migrations/0004_rename_transacted_balancetransactions_created_at.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payapp/migrations/0005_alter_balancetransactions_created_at.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payapp/migrations/0006_alter_balancetransactions_created_at.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payapp/migrations/0007_alter_balancetransactions_created_at.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payapp/migrations/0008_alter_balancetransactions_created_at.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payapp/migrations/0009_alter_balancetransactions_created_at.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/payapp/Transactions.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payapp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/payapp/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/payapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/payapp/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/payapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/payapp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/payapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/payapp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/register/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/webapps2026/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/webapps2026/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/webapps2026/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/payapp/FundTransaction.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/payapp/FundTransaction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/webapps2026/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/webapps2026/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapps2026/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/webapps2026/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,12 +59,13 @@
     &quot;ai.playground.ignore.import.keys.banner.in.settings&quot;: &quot;true&quot;,
     &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR_AND_PREVIEW&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/webapps2026/templates&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/webapps2026/templates/webapps2026&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\webapps2026\templates\webapps2026" />
       <recent name="E:\webapps2026\templates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -120,6 +124,10 @@
       <workItem from="1774873473335" duration="3614000" />
       <workItem from="1774887896247" duration="5134000" />
       <workItem from="1774955264042" duration="7950000" />
+      <workItem from="1774963436965" duration="234000" />
+      <workItem from="1775213892242" duration="5432000" />
+      <workItem from="1775219361219" duration="3368000" />
+      <workItem from="1775295688120" duration="1871000" />
     </task>
     <servers />
   </component>
