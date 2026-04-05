@@ -1,0 +1,21 @@
+{% extends 'webapps2026/base.html' %}
+
+{% block title %}
+    Make Transaction Request
+{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <h4>Make Transaction Request</h4>
+        <form method="post" class="form-group">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-success">Request</button>
+        </form>
+    {% else %}
+        <h1>You are not logged in!</h1>
+        <p>To request transactions, <a href="/templates/register/login.html">Login here</a></p>
+    {% endif %}
+{% endblock %}

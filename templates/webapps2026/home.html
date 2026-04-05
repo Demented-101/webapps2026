@@ -11,6 +11,9 @@
             <li>Name: {{ user.first_name }} {{ user.last_name }}</li>
             <li>Account Balance: {{ user_balance }}</li>
         </ul>
+        {% if has_unsent_requests %}
+            <h3>You have open transaction requests! <a href="/transactions/TransactionRequests">View here</a></h3>
+        {% endif %}
     {% else %}
 
     {% endif %}

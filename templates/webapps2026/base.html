@@ -29,11 +29,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/home">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/transactions/makeTransaction">Make Payment</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="/transactions">View Transactions</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Transactions</a>
+                        <div class="dropdown-menu">
+                            <a class="nav-link" href="/transactions/makeTransaction">Make Payment</a>
+                            <a class="nav-link" href="/transactions">View Transactions</a>
+                            <a class="nav-link" href="/transactions/requestTransaction">Request Payment</a>
+                            <a class="nav-link" href="/transactions/TransactionRequests">Transaction Requests</a>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/logout">Logout</a>

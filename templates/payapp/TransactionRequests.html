@@ -1,0 +1,64 @@
+{% extends 'webapps2026/base.html' %}
+
+{% block title %}
+    My Transaction Requests
+{% endblock %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        {% if open_requests|length > 0 %}
+        <h1>Current Open Transactions: </h1>
+        <br>
+        <h3>Current Balance: {{ balance }}</h3>
+        <form id="form" method="POST">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <th>From</th>
+                    <th>Amount requested</th>
+                    <th>Date</th>
+                    <th>Response</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                {% for req in open_requests %}
+                    <tr>
+                        <td>{{ req.from_username }}</td>
+                        <td>{{ req.amount }}</td>
+                        <td>{{ req.created_at }}</td>
+                        <td><input type="submit" value="accept" name="response"></td>
+                        <td><input type="submit" value="decline" name="response"></td>
+                        <td><input type="hidden" name="id" value="{{ req.id }}"></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </form>
+        {% endif %}
+        <br>
+        <h1>Request History</h1>
+        <br>
+        <table>
+            <tr>
+                <th>From</th>
+                <th>To</th>
+                <th>Amount requested</th>
+                <th>Date</th>
+                <th>Open</th>
+                <th>Accepted</th>
+            </tr>
+            {% for req in all_requests %}
+                <tr>
+                    <td>{{ req.from_username }}</td>
+                    <td>{{ req.to_username }}</td>
+                    <td>{{ req.amount }}</td>
+                    <td>{{ req.created_at }}</td>
+                    <td>{{ req.open }}</td>
+                    <td>{{ req.accepted }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <h1>You are not logged in!</h1>
+        <p>To view your transactions, <a href="/templates/register/login.html">Login here</a></p>
+    {% endif %}
+{% endblock %}

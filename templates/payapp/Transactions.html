@@ -8,12 +8,12 @@
     {% if user.is_authenticated %}
         <h1>My Transactions: </h1>
         <br>
-        <table style="border-spacing: 100px">
+        <table>
             <tr>
-                <th style="padding-right: 20px">To</th>
-                <th style="padding-right: 20px">From</th>
-                <th style="padding-right: 20px">Amount sent</th>
-                <th style="padding-right: 20px">Date</th>
+                <th>To</th>
+                <th>From</th>
+                <th>Amount sent</th>
+                <th>Date</th>
             </tr>
             {% for trans in transactions %}
                 <tr>
