@@ -1,10 +1,10 @@
 from django import forms
-from payapp.models import BalanceTransactions, BalanceTransactionRequest
+from payapp.models import BalanceTransaction, BalanceTransactionRequest
 
 class MakeTransactionForm(forms.ModelForm):
 
     class Meta:
-        model = BalanceTransactions
+        model = BalanceTransaction
         fields = ["payee_username", "recipient_username", "amount"]
         labels = {
             "payee_username": "payee (username)(!excluded!)",

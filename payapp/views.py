@@ -5,7 +5,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from . import models
 from payapp.forms import MakeTransactionForm, RequestTransactionForm
 from django.db import transaction, OperationalError
-from .models import BalanceTransactions
+from .models import BalanceTransaction
 
 
 @csrf_exempt
@@ -55,7 +55,7 @@ def make_transaction(request):
                     dst_balance.save()
 
                     ## add transaction to database
-                    models.BalanceTransactions.objects.create(
+                    models.BalanceTransaction.objects.create(
                         payee_username=src_username,
                         recipient_username=dst_username,
                         amount=amount_to_transfer,
@@ -110,7 +110,7 @@ def request_transaction(request):
 def view_transactions(request):
     # get all transactions I am part of, and then sort them by newest to oldest
     username = request.user.username
-    transactions = BalanceTransactions.objects.filter(recipient_username=username).values() | BalanceTransactions.objects.filter(payee_username=username).values()
+    transactions = BalanceTransaction.objects.filter(recipient_username=username).values() | BalanceTransaction.objects.filter(payee_username=username).values()
     transactions = transactions.order_by("-created_at").values()
 
     return render(request, "payapp/Transactions.html", context={
@@ -149,7 +149,7 @@ def view_transaction_requests(request, ignore_post=False):
                         dst_balance.save()
 
                         ## add transaction to database
-                        models.BalanceTransactions.objects.create(
+                        models.BalanceTransaction.objects.create(
                             payee_username=src_username,
                             recipient_username=dst_username,
                             amount=amount_to_transfer,

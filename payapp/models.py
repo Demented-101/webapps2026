@@ -32,12 +32,11 @@ class BalanceTransactionRequest(models.Model):
         details += f"accepted           : {self.accepted}\n"
         return details
 
-class BalanceTransactions(models.Model):
+class BalanceTransaction(models.Model):
     payee_username = models.CharField(max_length=150)
     recipient_username = models.CharField(max_length=150)
     amount = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
-    transaction_request = models.ForeignKey(BalanceTransactionRequest, on_delete=SET_NULL, null=True, blank=True)
 
     def __str__(self):
         details = ""

@@ -2,23 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b396ac3f-cda4-46b9-8a2c-36a63969fb75" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/payapp/migrations/0010_balancetransactionrequest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payapp/migrations/0011_balancetransactionrequest_open.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payapp/migrations/0012_balancetransactionrequest_state.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payapp/migrations/0013_remove_balancetransactionrequest_state.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payapp/migrations/0014_balancetransactions_transaction_request.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/payapp/MakeTransactionRequest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/payapp/TransactionRequestResponce.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/payapp/TransactionRequests.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/administation/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payapp/migrations/0015_rename_balancetransactions_balancetransaction.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payapp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/payapp/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/payapp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/payapp/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/payapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/payapp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/payapp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/payapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/payapp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/payapp/Transactions.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/payapp/Transactions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/webapps2026/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/webapps2026/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/webapps2026/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/webapps2026/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/register/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapps2026/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/webapps2026/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,6 +125,7 @@
       <workItem from="1775295688120" duration="8938000" />
       <workItem from="1775305348058" duration="148000" />
       <workItem from="1775382796473" duration="4360000" />
+      <workItem from="1775387428536" duration="3246000" />
     </task>
     <servers />
   </component>
