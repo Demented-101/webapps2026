@@ -1,0 +1,27 @@
+{% extends 'webapps2026/base.html' %}
+
+{% block title %}
+    Register new admin
+{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    {% if user.is_authenticated and is_admin%}
+        <h4>Register new admin</h4>
+        <form method="post" class="form-group">
+            {% csrf_token %}
+            {{ form|crispy }}
+
+            <label for="target_username">Username: </label>
+            <input id="target_username" type="text" name="target_username" value="">
+
+            <input type="submit" name="response">
+        </form>
+    {% else %}
+        <h1>You do not have permission to complete this action.</h1>
+        {% if not user.is_authenticated %}
+        <p>If you have an admin account, <a href="/templates/register/login.html">Login</a> first</p>
+        {% endif %}
+    {% endif %}
+{% endblock %}
