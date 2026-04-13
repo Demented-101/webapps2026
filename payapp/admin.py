@@ -1,10 +1,6 @@
 from django.contrib import admin
 from .models import *
 
-class BalanceAdmin(admin.ModelAdmin):
-    list_display = ["name", "balance"]
-admin.site.register(Balance, BalanceAdmin)
-
 class BalanceTransAdmin(admin.ModelAdmin):
     list_display = ["payee_username", "recipient_username", "amount", "created_at"]
 admin.site.register(BalanceTransaction, BalanceTransAdmin)

@@ -38,6 +38,11 @@
                             <a class="nav-link" href="/transactions/TransactionRequests">Transaction Requests</a>
                         </div>
                     </li>
+                    {% if is_admin %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Admin</a>
+                        </li>
+                    {% endif %}
                     <li class="nav-item">
                         <a class="nav-link" href="/logout">Logout</a>
                     </li>

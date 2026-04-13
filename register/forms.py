@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from payapp.models import Balance
+from .models import BalanceUser
 
 class RegisterForm(UserCreationForm):
     email = forms.EmailField(required=True)
@@ -12,5 +12,5 @@ class RegisterForm(UserCreationForm):
 
     def save(self, *args, **kwargs):
         instance = super(RegisterForm, self).save(*args, **kwargs)
-        Balance.objects.create(name=instance, balance=500)
+        BalanceUser.objects.create(user=instance, balance=500).save()
         return instance
