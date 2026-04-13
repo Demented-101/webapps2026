@@ -1,0 +1,35 @@
+{% extends 'webapps2026/base.html' %}
+
+{% block title %}
+   All Users
+{% endblock %}
+
+{% block content %}
+    {% if user.is_authenticated and is_admin %}
+        <h1>All Users: </h1>
+        <br>
+        <table>
+            <tr>
+                <th>Username</th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Registered on</th>
+                <th>Balance</th>
+            </tr>
+            {% for usr in users %}
+                <tr>
+                    <td>{{ usr.user.username }}</td>
+                    <td>{{ usr.user.first_name }}</td>
+                    <td>{{ usr.user.last_name }}</td>
+                    <td>{{ usr.user.date_joined }}</td>
+                    <td>{{ usr.balance }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <h1>You do not have permission to view this information.</h1>
+        {% if not user.is_authenticated %}
+        <p>If you have an admin account, <a href="/templates/register/login.html">Login</a> first</p>
+        {% endif %}
+    {% endif %}
+{% endblock %}

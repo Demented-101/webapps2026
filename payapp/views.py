@@ -8,7 +8,6 @@ from .models import BalanceTransaction, BalanceTransactionRequest
 from register.models import BalanceUser
 from administation.models import AdminUser
 
-
 @csrf_exempt
 def home(request):
     user_balance = 0
@@ -210,12 +209,6 @@ def view_transaction_requests(request, ignore_post=False):
     })
 
 @csrf_exempt
-def get_open_requests(username):
-    transaction_requests = BalanceTransactionRequest.objects.filter(to_username=username) & \
-                           BalanceTransactionRequest.objects.filter(open=True)
-    return transaction_requests.values()
-
-@csrf_exempt
 def render_form(request, form, template_name, error = "N/a"):
     # add error message if needed
     if error != "N/a":
@@ -224,5 +217,12 @@ def render_form(request, form, template_name, error = "N/a"):
     # return a render of the form.
     return render(request, template_name, {"form": form, "is_admin": is_admin(request)})
 
+@csrf_exempt
 def is_admin(request):
     return AdminUser.objects.filter(user__username=request.user.username).exists()
+
+@csrf_exempt
+def get_open_requests(username):
+    transaction_requests = BalanceTransactionRequest.objects.filter(to_username=username) & \
+                           BalanceTransactionRequest.objects.filter(open=True)
+    return transaction_requests.values()
