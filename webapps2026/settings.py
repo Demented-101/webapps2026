@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'django.db.backends.sqlite3',
     'register.apps.RegisterConfig',
     'payapp.apps.PayappConfig',
-    'administation.apps.AdministationConfig'
+    'administation.apps.AdministationConfig',
+    'conversion.apps.ConversionConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

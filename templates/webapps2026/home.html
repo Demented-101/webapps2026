@@ -4,12 +4,14 @@
     Payment Application Homepage
 {% endblock %}
 
+{% load crispy_forms_tags %}
+
 {% block content %}
     {% if user.is_authenticated %}
         <h1>User Details: </h1>
         <ul>
             <li>Name: {{ user.first_name }} {{ user.last_name }}</li>
-            <li>Account Balance: {{ user_balance }}</li>
+            <li>Account Balance: {{ user_balance }}{{ user_currency }}</li>
         </ul>
         {% if has_unsent_requests %}
             <h3>You have open transaction requests! <a href="/transactions/TransactionRequests">View here</a></h3>

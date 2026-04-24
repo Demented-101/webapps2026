@@ -7,23 +7,31 @@ from django.db import transaction, OperationalError
 from .models import BalanceTransaction, BalanceTransactionRequest
 from register.models import BalanceUser
 from administation.models import AdminUser
+from conversion.urls import my_url as base_url
+import requests
 
-@csrf_exempt
+@csrf_protect
 def home(request):
-    user_balance = 0
-    has_unsent_request = False
+    print(requests.get(base_url + '/GBP/USD/100', verify=False).headers)
+
     if request.user.is_authenticated:
-        # get user balance
-        user_balance = BalanceUser.objects.get(user__username=request.user.username).balance
+        # get user balance and currency type
+        bal_user = BalanceUser.objects.get(user__username=request.user.username)
 
-        # has unsent transaction
-        if len(get_open_requests(request.user.username)) > 0: has_unsent_request = True
+        return render(request, "webapps2026/home.html", context={
+            "user_currency": bal_user.currency_type,
+            "user_balance": bal_user.balance,
+            "has_unsent_requests":len(get_open_requests(request.user.username)) > 0,
+            "is_admin": is_admin(request),
+        })
 
-    return render(request, "webapps2026/home.html", context={
-        "user_balance":user_balance,
-        "has_unsent_requests":has_unsent_request,
-        "is_admin": is_admin(request),
-    })
+    else:
+        return render(request, "webapps2026/home.html", context={
+            "user_currency": 'N/a',
+            "user_balance": 0,
+            "has_unsent_requests": False,
+            "is_admin": is_admin(request),
+        })
 
 @csrf_protect
 def make_transaction(request):

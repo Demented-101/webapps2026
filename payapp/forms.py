@@ -1,5 +1,7 @@
 from django import forms
 from payapp.models import BalanceTransaction, BalanceTransactionRequest
+from register.models import BalanceUser
+
 
 class MakeTransactionForm(forms.ModelForm):
 
@@ -24,3 +26,4 @@ class RequestTransactionForm(forms.ModelForm):
             "amount": "Requested amount",
         }
         exclude = ["from_username"]
+

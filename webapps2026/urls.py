@@ -28,4 +28,5 @@ urlpatterns = [
     path("logout/", reg_views.logout_user, name="logout"),
     path("transactions/", include("payapp.urls")),
     path("administration/", include("administation.urls")),
+    path("conversion/", include("conversion.urls")),
 ]
