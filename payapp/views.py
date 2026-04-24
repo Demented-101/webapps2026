@@ -149,6 +149,13 @@ def view_transaction_requests(request, ignore_post=False):
                     messages.error(request, "cannot load user balance")
                     return view_transaction_requests(request, True)
 
+                if src_balance < amount_to_transfer:
+                    transaction_request.open = False
+                    transaction_request.accepted = False
+                    transaction_request.save()
+                    messages.info(request, "Transaction declined")
+                    return view_transaction_requests(request, True)
+
                 ## run transaction atomically
                 try:
                     with transaction.atomic():
