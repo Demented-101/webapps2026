@@ -43,6 +43,10 @@ def register_new_admin(request):
                 messages.error(request, "could not find user with this username")
                 return render(request, "Administration/RegisterAdmin.html", {"is_admin": is_admin(request)})
 
+            if AdminUser.objects.filter(user__username=target_username).exists():
+                messages.info(request, "this user is already an admin")
+                return render(request, "Administration/RegisterAdmin.html", {"is_admin": is_admin(request)})
+
             ## run transaction atomically
             try:
                 with transaction.atomic():
