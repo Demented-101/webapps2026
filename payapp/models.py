@@ -18,12 +18,13 @@ class BalanceTransactionRequest(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     open = models.BooleanField(default=True)
     accepted = models.BooleanField(default=False)
+    currency_type = models.CharField(max_length=3, default="GBP")
 
     def __str__(self):
         details = ""
         details += f"From (Username)    : {self.from_username}\n"
         details += f"To (Username)      : {self.to_username}\n"
-        details += f"Amount sent        : {self.amount} (in default currency)\n"
+        details += f"Amount sent        : {self.amount} {self.currency_type}\n"
         details += f"Date sent          : {self.created_at}\n"
         details += f"Open               : {self.open}\n"
         if self.open: return details
@@ -35,11 +36,12 @@ class BalanceTransaction(models.Model):
     recipient_username = models.CharField(max_length=150)
     amount = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
+    currency_type = models.CharField(max_length=3, default="GBP")
 
     def __str__(self):
         details = ""
         details += f"From (Username)    : {self.payee_username}\n"
         details += f"To (Username)      : {self.recipient_username}\n"
-        details += f"Amount sent        : {self.amount} (in default currency)\n"
+        details += f"Amount sent        : {self.amount}{self.currency_type}\n"
         details += f"Date sent          : {self.created_at}\n"
         return details

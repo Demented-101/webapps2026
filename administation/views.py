@@ -22,13 +22,13 @@ def view_users(request):
 
 def view_transactions(request):
     return render(request, "Administration/Transactions.html", {
-        "transactions": BalanceTransaction.objects.all(),
+        "transactions": BalanceTransaction.objects.all().order_by("-created_at"),
         "is_admin": is_admin(request),
     })
 
 def view_transaction_requests(request):
     return render(request, "Administration/TransactionRequests.html", {
-        "transaction_requests": BalanceTransactionRequest.objects.all(),
+        "transaction_requests": BalanceTransactionRequest.objects.all().order_by("-created_at"),
         "is_admin": is_admin(request),
     })
 

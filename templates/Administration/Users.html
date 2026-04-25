@@ -15,6 +15,7 @@
                 <th>Last name</th>
                 <th>Registered on</th>
                 <th>Balance</th>
+                <th>Currency</th>
             </tr>
             {% for usr in users %}
                 <tr>
@@ -23,6 +24,7 @@
                     <td>{{ usr.user.last_name }}</td>
                     <td>{{ usr.user.date_joined }}</td>
                     <td>{{ usr.balance }}</td>
+                    <td>{{ usr.currency_type }}</td>
                 </tr>
             {% endfor %}
         </table>

@@ -19,7 +19,7 @@
                 <tr>
                     <td>{{ trans.recipient_username }}</td>
                     <td>{{ trans.payee_username }}</td>
-                    <td>{{ trans.amount }}</td>
+                    <td>{{ trans.amount }}{{ trans.currency_type }}</td>
                     <td>{{ trans.created_at }}</td>
                 </tr>
             {% endfor %}

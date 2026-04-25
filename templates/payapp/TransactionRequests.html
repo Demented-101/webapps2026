@@ -24,7 +24,7 @@
                 {% for req in open_requests %}
                     <tr>
                         <td>{{ req.from_username }}</td>
-                        <td>{{ req.amount }}</td>
+                        <td>{{ req.amount }}{{ req.currency_type }}</td>
                         <td>{{ req.created_at }}</td>
                         <td><input type="submit" value="accept" name="response"></td>
                         <td><input type="submit" value="decline" name="response"></td>
@@ -50,7 +50,7 @@
                 <tr>
                     <td>{{ req.from_username }}</td>
                     <td>{{ req.to_username }}</td>
-                    <td>{{ req.amount }}</td>
+                    <td>{{ req.amount }}{{ req.currency_type }}</td>
                     <td>{{ req.created_at }}</td>
                     <td>{{ req.open }}</td>
                     <td>{{ req.accepted }}</td>

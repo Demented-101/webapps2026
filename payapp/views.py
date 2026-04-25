@@ -12,8 +12,6 @@ import requests
 
 @csrf_protect
 def home(request):
-    print(requests.get(base_url + '/GBP/USD/100', verify=False).headers)
-
     if request.user.is_authenticated:
         # get user balance and currency type
         bal_user = BalanceUser.objects.get(user__username=request.user.username)
@@ -58,6 +56,9 @@ def make_transaction(request):
             if src.balance < amount_to_transfer: return render_form(request, form, "payapp/FundTransaction.html", error = "Insufficient funds.")
             if amount_to_transfer <= 0: return render_form(request, form, "payapp/FundTransaction.html", error = "Invalid amount to send")
 
+            ## get transferred amount - conversion
+            converted_amount = requests.get(base_url + f'/{src.currency_type}/{dst.currency_type}/{str(amount_to_transfer)}').headers["Converted_amount"]
+
             ## run transaction atomically
             try:
                 with transaction.atomic():
@@ -65,7 +66,7 @@ def make_transaction(request):
                     src.balance = src_balance - amount_to_transfer
                     src.save()
                     ## add funds to recipients account
-                    dst.balance = dst_balance + amount_to_transfer
+                    dst.balance = dst_balance + int(float(converted_amount))
                     dst.save()
 
                     ## add transaction to database
@@ -73,6 +74,7 @@ def make_transaction(request):
                         payee_username=src_username,
                         recipient_username=dst_username,
                         amount=amount_to_transfer,
+                        currency_type=src.currency_type,
                     ).save()
 
             ## re-render form with transaction error
@@ -111,6 +113,7 @@ def request_transaction(request):
                 from_username=src_username,
                 to_username=dst_username,
                 amount=amount_to_transfer,
+                currency_type=BalanceUser.objects.get(user__username=src_username).currency_type,
             ).save()
             messages.info(request, "Request Sent!")
 
@@ -164,11 +167,14 @@ def view_transaction_requests(request, ignore_post=False):
                     messages.info(request, "Transaction declined")
                     return view_transaction_requests(request, True)
 
+                ## get converted currency
+                converted_currency = requests.get(base_url + f'/{src.currency_type}/{dst.currency_type}/{str(amount_to_transfer)}').headers["Converted_amount"]
+
                 ## run transaction atomically
                 try:
                     with transaction.atomic():
                         ## remove funds from user
-                        src.balance = src_balance - amount_to_transfer
+                        src.balance = src_balance - int(float(converted_currency))
                         src.save()
                         ## add funds to recipients account
                         dst.balance = dst_balance + amount_to_transfer
@@ -179,6 +185,7 @@ def view_transaction_requests(request, ignore_post=False):
                             payee_username=src_username,
                             recipient_username=dst_username,
                             amount=amount_to_transfer,
+                            currency_type=transaction_request.currency_type
                         ).save()
 
                         transaction_request.open = False

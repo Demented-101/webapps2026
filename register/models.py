@@ -6,7 +6,7 @@ class BalanceUser(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     balance = models.IntegerField(default=500)
-    currency_type = models.CharField(max_length=3, default='GDP', choices=[('GDP', 'GDP'), ('USD', 'USD'), ('EUR', 'EUR')])
+    currency_type = models.CharField(max_length=3, default='GBP', choices=[('GBP', 'GBP'), ('USD', 'USD'), ('EUR', 'EUR')])
 
     def __str__(self):
         details = ""

@@ -1,6 +1,4 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-from rest_framework.status import HTTP_404_NOT_FOUND
+from django.http import HttpResponse, Http404
 
 GBP_CONVERSIONS = {
     'GBP': 1,
@@ -25,8 +23,10 @@ CURRENCIES = {
 
 def get_conversion(request, currency1, currency2, amount_of_currency1):
     ## verify URL is valid
-    if not currency1 in CURRENCIES.keys(): return HTTP_404_NOT_FOUND
-    if not currency2 in CURRENCIES.keys(): return HTTP_404_NOT_FOUND
+    print("<<", currency1, currency1 in CURRENCIES.keys())
+    print("<-", currency2, currency2 in CURRENCIES.keys())
+    if not currency1 in CURRENCIES.keys(): raise Http404
+    if not currency2 in CURRENCIES.keys(): raise Http404
 
     ## make conversion
     conversion = CURRENCIES[currency1][currency2]
