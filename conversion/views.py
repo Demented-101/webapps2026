@@ -23,8 +23,6 @@ CURRENCIES = {
 
 def get_conversion(request, currency1, currency2, amount_of_currency1):
     ## verify URL is valid
-    print("<<", currency1, currency1 in CURRENCIES.keys())
-    print("<-", currency2, currency2 in CURRENCIES.keys())
     if not currency1 in CURRENCIES.keys(): raise Http404
     if not currency2 in CURRENCIES.keys(): raise Http404
 

@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block content %}
+    {% csrf_token %}
     {% if user.is_authenticated and is_admin %}
         <h1>Admin Details: </h1>
         <ul>

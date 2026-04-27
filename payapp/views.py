@@ -57,7 +57,9 @@ def make_transaction(request):
             if amount_to_transfer <= 0: return render_form(request, form, "payapp/FundTransaction.html", error = "Invalid amount to send")
 
             ## get transferred amount - conversion
-            converted_amount = requests.get(base_url + f'/{src.currency_type}/{dst.currency_type}/{str(amount_to_transfer)}').headers["Converted_amount"]
+            converted_amount = requests.get(
+                base_url + f'/{src.currency_type}/{dst.currency_type}/{str(amount_to_transfer)}'
+            ).headers["Converted_amount"]
 
             ## run transaction atomically
             try:

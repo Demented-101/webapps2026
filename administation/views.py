@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+from django.views.decorators.csrf import csrf_protect
+
 from administation.models import AdminUser
 from register.models import BalanceUser
 from payapp.models import *
@@ -7,12 +9,14 @@ from payapp.views import is_admin
 from django.contrib import messages
 from django.db import transaction, OperationalError
 
+@csrf_protect
 def admin_homepage(request):
     return render(request, "Administration/home.html", {
         "registered_by": AdminUser.objects.get(user__username=request.user.username).registered_by,
         "is_admin": is_admin(request),
     })
 
+@csrf_protect
 def view_users(request):
     return render(request, "Administration/Users.html", {
         "users": BalanceUser.objects.all(),
@@ -20,18 +24,21 @@ def view_users(request):
         "is_admin": is_admin(request),
     })
 
+@csrf_protect
 def view_transactions(request):
     return render(request, "Administration/Transactions.html", {
         "transactions": BalanceTransaction.objects.all().order_by("-created_at"),
         "is_admin": is_admin(request),
     })
 
+@csrf_protect
 def view_transaction_requests(request):
     return render(request, "Administration/TransactionRequests.html", {
         "transaction_requests": BalanceTransactionRequest.objects.all().order_by("-created_at"),
         "is_admin": is_admin(request),
     })
 
+@csrf_protect
 def register_new_admin(request):
     if request.method == "POST":
         if request.user.is_authenticated and is_admin(request):
