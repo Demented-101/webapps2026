@@ -55,6 +55,7 @@ def make_transaction(request):
             ## error checks to make sure numbers are valid
             if src.balance < amount_to_transfer: return render_form(request, form, "payapp/FundTransaction.html", error = "Insufficient funds.")
             if amount_to_transfer <= 0: return render_form(request, form, "payapp/FundTransaction.html", error = "Invalid amount to send")
+            if src_username == dst_username: return render_form(request, form, "payapp/FundTransaction.html", error="Cannot request from yourself")
 
             ## get transferred amount - conversion
             converted_amount = requests.get(
@@ -106,6 +107,8 @@ def request_transaction(request):
             # make sure the user exists
             if not BalanceUser.objects.filter(user__username=dst_username).exists() and dst_username != src_username:
                 return render_form(request, form, "payapp/MakeTransactionRequest.html", error="User does not exist")
+            if request.user.username == dst_username:
+                return render_form(request, form, "payapp/MakeTransactionRequest.html", error="Cannot request from yourself")
 
             # make sure number is valid
             if amount_to_transfer <= 0: return render_form(request, form, "payapp/MakeTransactionRequest.html", error="Invalid amount to send")
