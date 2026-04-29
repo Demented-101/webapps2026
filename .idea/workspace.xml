@@ -5,22 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b396ac3f-cda4-46b9-8a2c-36a63969fb75" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/payapp/migrations/0018_balancetransaction_currency_type_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/register/migrations/0004_alter_balanceuser_currency_type.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webapps2026.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webapps2026.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/administation/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/administation/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conversion/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/payapp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/payapp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/register/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/register/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Administration/TransactionRequests.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Administration/TransactionRequests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Administration/Transactions.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Administration/Transactions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Administration/Users.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Administration/Users.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/payapp/TransactionRequests.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/payapp/TransactionRequests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/payapp/Transactions.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/payapp/Transactions.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,10 +92,9 @@
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="DEBUG_JUST_MY_CODE" value="true" />
       <option name="RUN_TOOL" value="" />
       <option name="launchJavascriptDebuger" value="false" />
       <option name="port" value="8000" />
@@ -125,8 +111,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-b26f3e71634d-JavaScript-PY-251.26094.141" />
-        <option value="bundled-python-sdk-9f8e2b94138c-36ea0e71a18c-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.26094.141" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-PY-253.31033.139" />
+        <option value="bundled-python-sdk-2653e85de345-6d6dccd035ac-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-253.31033.139" />
       </set>
     </attachedChunks>
   </component>
@@ -158,6 +144,7 @@
       <workItem from="1777121505594" duration="1364000" />
       <workItem from="1777278168825" duration="124000" />
       <workItem from="1777280667903" duration="813000" />
+      <workItem from="1777462722238" duration="140000" />
     </task>
     <servers />
   </component>
